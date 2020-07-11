@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block body %}
+<!--Text area-->
+<div class="container">
+    <h1>Welcome To TextUtilsR</h1>
+    <p>Here we offer some of the basic text utilities for string manipulation. The work is still in progress. We
+        will keep adding more functionalities. </p>
+</div>
+
+<div class="container my-5" style="background-color: rgb(203, 225, 255);">
+    <form action='/analyze' method='post'>{% csrf_token %}
+        <!--csrf token is used for post method (for security purpose)-->
+        <label for="textarea">Enter your text below</label></br>
+
+        <textarea name='text' id="textarea" autocomplete="off"
+            style="margin: 0px; width: 701px; height: 200px;"></textarea></br>
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="customSwitch1" name='removepunc'>
+            <label class="custom-control-label" for="customSwitch1">Remove
+                punctuations</label></br>
+        </div>
+        <div class="custom-control custom-switch">
+            <input type='checkbox' class="custom-control-input" id="customSwitch2" name='fullcaps'>
+            <label class="custom-control-label" for="customSwitch2">UPPERCASE </label></br>
+        </div>
+        <div class="custom-control custom-switch">
+            <input type='checkbox' class="custom-control-input" id="customSwitch3" name='newlineremover'>
+            <label class="custom-control-label" for="customSwitch3">New Line
+                Removed </label></br>
+        </div>
+        <div class="custom-control custom-switch">
+            <input type='checkbox' class="custom-control-input" id="customSwitch4" name='extraspaceremover'><label
+                class="custom-control-label" for="customSwitch4"> Extra
+                space removed </label></br>
+        </div>
+        <div class="custom-control custom-switch">
+            <input type='checkbox' class="custom-control-input" id="customSwitch5" name='charcounter'><label
+                class="custom-control-label" for="customSwitch5"> Total
+                Characters </label></label></br>
+        </div>
+        <div>
+            <button type='submit' class="btn btn-primary my-2">Analyze Text</button>
+        </div>
+    </form>
+
+</div>
+
+{% endblock %}

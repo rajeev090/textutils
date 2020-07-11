@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <b>Sucess</b> - your text has been analyzed!
+</div>
+<div class="container">
+    <h1>Welcome To TextUtilsR</h1>
+    <p>Here we offer some of the basic text utilities for string manipulation. The work is still in progress. We
+        will keep adding more functionalities. </p>
+</div>
+
+<div class="container mt-5">
+    <h3>Your Analyzed Text -- {{purpose}}</h3>
+    <div class='container'
+        style="font-size: larger; border: thick; border-color: black; background-color: rgb(203, 225, 255);">
+        <p>
+        <pre>{{charcount}}</br>{{ analyzed_text }}</pre>
+        </p>
+    </div>
+</div>
+
+{% endblock %}
